@@ -18,6 +18,6 @@ public class Word implements Expression {
 
 	@Override
 	public String toString() {
-		return String.format("[Word] %s", text);
+		return String.format("[W] %s ", text);
 	}
 }

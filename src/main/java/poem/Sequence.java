@@ -27,7 +27,7 @@ public class Sequence implements Expression {
 
 	@Override
 	public String toString() {
-		return String.format("[Sequence] %s", Arrays.asList(expressions).stream().map(exp -> exp.toString()).collect(
+		return String.format("[SEQ] %s ", Arrays.asList(expressions).stream().map(exp -> exp.toString()).collect(
 				Collectors.joining()));
 	}
 }

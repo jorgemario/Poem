@@ -2,6 +2,7 @@ package poem;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -27,7 +28,12 @@ public class Poem implements Expression {
 
 	@Override
 	public String eval() {
-		return registry.get("<POEM>").eval();
+		Optional<Expression> root = registry.get("<POEM>");
+		if (root.isPresent()) {
+			return root.get().eval();
+		} else {
+			throw new RuntimeException("POEM Rule not found");
+		}
 	}
 
 	/**

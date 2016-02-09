@@ -2,6 +2,7 @@ package poem;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Created by jorgemario on 2/3/16.
@@ -13,8 +14,8 @@ public class RuleRegistry {
 		rules = new HashMap<>();
 	}
 
-	public Expression get(String ruleId) {
-		return rules.getOrDefault(ruleId, Keyword.of("$END"));
+	public Optional<Expression> get(String ruleId) {
+		return Optional.ofNullable(rules.get(ruleId));
 	}
 
 	public void add(String ruleId, Expression exp) {

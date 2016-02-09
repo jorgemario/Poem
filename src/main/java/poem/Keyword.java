@@ -32,6 +32,6 @@ public class Keyword implements Expression {
 
 	@Override
 	public String toString() {
-		return String.format("[Keyword] %s", id);
+		return String.format("[KEY] %s ", id);
 	}
 }

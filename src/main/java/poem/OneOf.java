@@ -22,14 +22,14 @@ public class OneOf implements Expression {
 	@Override
 	public String eval() {
 		if (expressions.length == 0) {
-			return "";
+			return Keyword.END.eval();
 		}
 		return expressions[random.nextInt(expressions.length)].eval();
 	}
 
 	@Override
 	public String toString() {
-		return String.format("[OneOf] %s", Arrays.asList(expressions).stream().map(exp -> exp.toString()).collect(
+		return String.format("[ONEOF] %s ", Arrays.asList(expressions).stream().map(exp -> exp.toString()).collect(
 				Collectors.joining()));
 	}
 }
