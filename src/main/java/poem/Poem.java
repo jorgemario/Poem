@@ -22,6 +22,8 @@ public class Poem implements Expression {
 			Matcher m = RULE.matcher(rule);
 			if (m.find()) {
 				registry.add("<" + m.group(1) + ">", factory.sequence(m.group(2)));
+			} else {
+				throw new RuntimeException(String.format("Invalid Rule \"%s\"", rule));
 			}
 		});
 	}
