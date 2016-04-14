@@ -38,6 +38,10 @@ public class Poem implements Expression {
 		}
 	}
 
+	public String poem() {
+		return eval();
+	}
+
 	/**
 	 * To Create Expressions
 	 */
